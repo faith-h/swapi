@@ -67,7 +67,7 @@ class People extends React.Component {
       <>
         <Link key={p.url} to={p.url.slice(20)}> 
           <Segment inverted style={{margin: '10px 10px 20px 10px', boxShadow: '5px 6px black' }}>
-            <p> {p.name} </p>
+            <p style={{ fontWeight: 'bold' }}> {p.name} </p>
             <p> { p.homeworld } </p>
             {/* <p> { this.state.planets.indexOf(p.homeworld.slice(29, -1)) } </p> */}
           </Segment>
