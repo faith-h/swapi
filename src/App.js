@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
+import Person from './components/Person'
+import NoMatch from './components/NoMatch'
+import styled from 'styled-components'
+import { Route, Switch } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+  <AppContainer>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/people/:id' component={Person} />
+      <Route component={NoMatch} />
+    </Switch>
+  </AppContainer>
+  </>
+)
+
+const AppContainer = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
+`;
 
 export default App;
